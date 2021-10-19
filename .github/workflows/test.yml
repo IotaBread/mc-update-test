@@ -1,0 +1,10 @@
+on: ['workflow_dispatch']
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ByMartrixX/minecraft-update-check-action@v0
+        id: check
+        with:
+          version-manifest-url: https://pastebin.com/MNnEWpMGs
+      - run: echo "Version ${{ steps.check.outputs.id }} ${{ steps.check.outputs.type }} ${{ steps.check.outputs.url }}"
