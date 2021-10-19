@@ -6,5 +6,5 @@ jobs:
       - uses: ByMartrixX/minecraft-update-check-action@master
         id: check
         with:
-          version-manifest-url: https://pastebin.com/raw/MNnEWpMGs
+          version-manifest-url: https://pastebin.com/raw/MNnEWpMG
       - run: echo "Version ${{ steps.check.outputs.id }} ${{ steps.check.outputs.type }} ${{ steps.check.outputs.url }}"
