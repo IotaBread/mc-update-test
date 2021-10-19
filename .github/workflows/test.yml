@@ -3,7 +3,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - uses: ByMartrixX/minecraft-update-check-action@master
+      - uses: ByMartrixX/minecraft-update-check-action@e2a3f51eac5902940aa0e2ac6c746d30ad768d05
         id: check
         with:
           version-manifest-url: https://pastebin.com/raw/MNnEWpMG
