@@ -1,0 +1,21 @@
+name: 'Scheduled Update check'
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  check-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Check Minecraft updates'
+        uses: ByMartrixX/minecraft-update-check-action@dev
+        id: check
+        with:
+          version-manifest-url: https://launchermeta.mojang.com/mc/game/version_manifest_v2.json
+      - name: Discord Webhook Action
+        uses: tsickert/discord-webhook@v4.0.0
+        if: ${{ steps.check.outputs.id != '' }}
+        with:
+          webhook-url: ${{ secrets.WEBHOOK_URL }}
+          content: "New Minecraft '${{ steps.check.outputs.type }}' released: ${{ steps.check.outputs.id }}"
