@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Check Minecraft updates'
-        uses: ByMartrixX/minecraft-update-check-action@dev
+        uses: ByMartrixX/minecraft-update-check-action@v0
         id: check
         with:
           version-manifest-url: https://launchermeta.mojang.com/mc/game/version_manifest_v2.json
